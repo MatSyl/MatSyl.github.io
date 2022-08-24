@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
   <head>
     <meta charset="utf-8">
 	<meta name="author" content="Sylvain MATHIEU">
@@ -10,28 +9,139 @@
   </head>
   
   <body>
-  
 	<header>
 		<h1>Blog | Sylvain MATHIEU</h1>
 	</header>
 	
 	<main>
-	
 		<article>
 			<h2>Introduction</h2>
 			<p>J'ai inité ce blog pour partager du contenu avec mon équipe. Vous trouverez ici des vidéos 📺 / des podcasts 📻 / des livres 📕 / des articles 📰 qui me plaisent, m'interpellent et retiennent mon attention dans le monde du développement logiciel.</p>
 			<p>
 				<ul>
 					<li><a href="#">#10 - 📺 Continuous Delivery</a></li>
-					<li><a href="#">#9 - 📰 Culture organisationnelle</a></li>
-					<li><a href="#">#8 - 📰 State of DevOps</a></li>
-					<li><a href="#">#7 - 🌟 Extreme Programming</a></li>
-					<li><a href="#">#6 - 📕 Software Craft</a></li>
+					<li><a href="#culture_org">#9 - 📰 Culture organisationnelle</a></li>
+					<li><a href="#state_of_devops">#8 - 📰 State of DevOps</a></li>
+					<li><a href="#xp">#7 - 🌟 Extreme Programming</a></li>
+					<li><a href="#software_craft">#6 - 📕 Software Craft</a></li>
 					<li><a href="#arnaud_lemaire">#5 - 📺 Arnaud Lemaire</a></li>
 					<li><a href="#dont_kill_french_tech">#4 - 📰 Don't Kill French Tech</a></li>
 					<li><a href="#culture_code">#3 - 📕 Culture Code</a></li>
 					<li><a href="#les_cast_codeurs_et_welovedevs">#2 - 📻 Les Cast Codeurs et WeLoveDevs</a></li>
 					<li><a href="#cours_java">#1 - 📺 Cours Java</a></li>
+				</ul>
+			</p>
+		</article>
+		
+		<hr>
+		
+		<article>
+			<h2 id="culture_org">#9 - 📰 Culture organisationnelle</h2>
+			<p>
+				<ul>
+					<li>Titre : <a href="https://coach-agile.com/2021/11/changer-culture-organisationnelle/" target="_blank">Comment changer une culture organisationnelle ?</a> par Coach Agile</li>
+					<li>Année : 2021</li>
+					<li>Most-clés : management / changement / lean</li>
+					<li>Tout public 👐</li>
+					<li>Commentaires :
+						<ul>
+							<li>une culture d'entreprise générative née chez Toyota 🚗</li>
+							<li>changer les pratiques pour changer les esprits</li>
+							<li>la gestion du changement comme première étape de la vue globale du DORA ⬇️</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+			
+			<blockquote>
+				<p><cite>La phrase la plus dangereuse qui soit est : "Nous avons toujours fait comme ça."</cite></p>
+				<p>Grace Hopper</p>
+			</blockquote>
+		</article>
+		
+		<hr>
+		
+		<article>
+			<h2 id="state_of_devops">#8 - 📰 State of DevOps</h2>
+			<p>
+				<ul>
+					<li>Titre : <a href="https://www.devops-research.com/research.html" target="_blank">State of DevOps</a> (en) par le laboratoire DORA</li>
+					<li>Année : à partir de 2014</li>
+					<li>Most-clés : étude scientifique / rapidité / fiabilité</li>
+					<li>Tout public 👐</li>
+					<li>Contenus introductifs :
+						<ol>
+							<li><a href="https://youtu.be/GOMTGimBgXA" target="_blank">courte présentation</a> de R. Béraud-Sudreau sur la chaîne YT de Scrum Life</li>
+							<li><a href="https://blog.octo.com/compte-rendu-matinale-accelerate-la-vitesse-conditionne-lexcellence-un-nouveau-paradigme-dans-le-developpement-logiciel/" target="_blank">long article</a> (et matinale vidéo) par Octo</li>
+							<li><a href="https://holub.com/adapting-accelerate-to-development/" target="_blank">article</a> de blog (en) de A. Holub</li>
+						</ol>
+					</li>
+					<li>Commentaires :
+						<ul>
+							<li>les trois réalisations du DORA à considérer :
+								<ol>
+									<li>les rapports de recherche sur l'état de l'art du devops publiés régulièrement depuis 2014</li>
+									<li>le livre synthétique <a href="https://itrevolution.com/accelerate-book/" target="_blank">Accelerate</a> publié en 2018</li>
+									<li>la vue globale illustrant les leviers d'actions identifiés par l'étude</li>
+								</ol>
+							</li>
+							<li>quatre indicateurs clés de mesure de la performance : deux de rapidité et deux de fiabilité</li>
+							<li>plusieurs pratiques lean et techniques identifiées sont originellement issues de l'extreme programming ⬇️</li>
+							<li>chercher à créer des systèmes aisément testables et déployables : architectures faiblement couplées, tests et intégration continus, développements sur une <em>unique</em> branche (version 2021, p. 27), installations automatisées, etc...</li>
+							<li>devops == livraison continue == conserver un logiciel dans un état livrable à chaque instant (culture, pratiques et objectifs communs, nous y reviendrons), cette discipline peut permettre d'atteindre un rythme de travail où rapidité et fiabilité vont de pair 🔥</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+		</article>
+		
+		<hr>
+		
+		<article>
+			<h2 id="xp">#7 - 🌟 Extreme Programming</h2>
+			<p>
+				<ul>
+					<li>Titre : <a href="https://livre.fnac.com/a2541031/Kent-Beck-Extreme-programming-explained" target="_blank">Extreme Programming, 2nd ed.</a> (en) par Kent Beck</li>
+					<li>Année : 2004</li>
+					<li>Most-clés : méthode agile / collaboration / qualité / lean software</li>
+					<li>Tout public 👐</li>
+					<li>Contenus complémentaires :
+						<ol>
+							<li><a href="https://youtu.be/AJLL4PZa54g" target="_blank">présentation</a> de T. Pierrain</li>
+							<li><a href="https://youtu.be/ev1wsZrfO3M" target="_blank">présentation</a> de P. Le Merrer</li>
+							<li><a href="http://www.extremeprogramming.org/" target="_blank">extremeprogramming.org</a> (en)</li>
+							<li><a href="https://youtu.be/cGuTmOUdFbo" target="_blank">présentation et rétrospective</a> (en) de K. Beck himself</li>
+						</ol>
+					</li>
+					<li>Commentaires :
+						<ul>
+							<li>méthode agile de développement logiciel née en 1996</li>
+							<li>similaire à Scrum pour l'organisation d'une équipe et d'un projet mais prescriptive sur les pratiques d'ingénierie</li>
+							<li>est à l'origine de <mark>toutes les pratiques techniques</mark> (pas des outils !) des équipes les plus performantes : travail en binôme, test-driven development, simplicité, vocabulaire métier partagé, standards de codage, intégration continue, tests automatisés, petites livraisons fréquentes, rédaction et priorisation des stories, etc...</li>
+							<li>K. Beck est également le créateur de la 1ère version de JUnit</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+		</article>
+		
+		<hr>
+		
+		<article>
+			<h2 id="software_craft">#6 - 📕 Software Craft</h2>
+			<p>
+				<ul>
+					<li>Titre : <a href="https://www.dunod.com/sciences-techniques/software-craft-tdd-clean-code-et-autres-pratiques-essentielles" target="_blank">Software Craft</a> par un collectif de 5 développeurs</li>
+					<li>Année : 2022</li>
+					<li>Most-clés : test-driven development / clean code / agilité</li>
+					<li>Public : programmeur</li>
+					<li>Commentaires :
+						<ul>
+							<li>avec Culture Code, un des rares livres français à parler de code ⬇️</li>
+							<li>introductif, clair, agréable à lire et accessible aux dév. juniors 🍼</li>
+							<li>porte d'entrée vers de nombreux concepts et ouvrages pour les + curieux 🔍</li>
+						</ul>
+					</li>
 				</ul>
 			</p>
 		</article>
@@ -94,8 +204,8 @@
 					<li>Tout public 👐</li>
 					<li>Commentaires :
 						<ul>
-							<li>article publié dans Le Monde</li>
-							<li>fait le lien avec l'épisode 262 des Cast Codeurs ⬇⬇</li>
+							<li>article publié dans le journal Le Monde</li>
+							<li>fait le lien avec l'épisode 262 des Cast Codeurs ⬇️</li>
 							<li>plus récente, cette <a href="https://www.latribune.fr/opinions/tribunes/pour-un-ministere-du-numerique-de-plein-exercice-916582.html" target="_blank">tribune</a> pour la création d'un ministère du numérique</li>
 						</ul>
 					</li>
@@ -194,16 +304,12 @@
 		</article>
 		
 		<hr>
-		
 	</main>
 	
 	<footer>
-	
-		<p>
-			Blog | Sylvain MATHIEU<br>
-			<a href="https://registry.jsonresume.org/MatSyl">À propos</a> • <a href="https://twitter.com/MatSylv">@MatSylv</a></footer>
-		</p>
+		Blog | Sylvain MATHIEU<br>
+		<a href="https://registry.jsonresume.org/MatSyl" target="_blank">À propos</a> • <a href="https://twitter.com/MatSylv" target="_blank">@MatSylv</a>
+	</footer>
 		
   </body>
-  
 </html>
