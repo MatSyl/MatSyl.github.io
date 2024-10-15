@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Tests unitaires</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Tests unitaires</h2>
+					<p><em>Developer tests</em></p>
+					<p>-</p>
+					<p>Atelier</p>
+					<p><small>Sylvain MATHIEU - id. FR Delivery - Equasens</small></p>
+				</section>
+				<section>
+					<h3>Objectifs</h3>
+					<ul>
+						<li>L'intérêt d'écrire des tests automatisés</li>
+						<li>Anatomie d'un test</li>
+						<li>Améliorer l'adoption via une application concrète</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>Intérêt(s)</h3>
+						<ul>
+							<li>State of DevOps Report</li>
+							<li>Documentation vivante</li>
+							<li>Guider la conception</li>
+							<li>Exécution rapide</li>
+						</ul>
+					</section>
+					<section>
+						<img data-src="dora-core-model-v1.2.2.png">
+					</section>
+					<section>
+					<blockquote>&ldquo;Nous ne voulons pas avoir des tests juste pour avoir des tests. Nous voulons des tests pour soutenir notre travail.&ldquo;</blockquote>
+					<p>Michael Feathers, Working Effectively With Legacy Code</p>
+				</section>
+				</section>
+				<section><h3>Anatomie</h3></section>
+				<section>
+					<p>Un test s'adresse à l'interface publique de notre code : comment notre logiciel fonctionne depuis la perspective d'un utilisateur/consommateur de ce logiciel</p>
+					<p>---</p>
+					<p>Un test doit chercher à capturer un comportement attendu du système et non pas une implémentation spécifique</p>
+				</section>
+				<section>
+					<p>On sépare ainsi la conception de l'interface de notre code de l'implémentation "cachée" derrière cette interface</p>
+					<p>Note : une interface est la surface d'échange entre deux composants logiciels</p>
+				</section>
+				<section>
+					<p>3 piliers du test unitaires : lisibilité, maintenabilité et confiance</p>
+					<p>---</p>
+					<p>3 étages du test unitaire : Given / When / Then ou Arrange / Act / <u>Assert</u></p>
+					<p>---</p>
+					<p>Les tests ne doivent jamais s'affecter mutuellement</p>
+				</section>
+				<!--<section>
+					<ul>
+						<li>indépendant : le test s’exécute indépendamment des autres</li>
+						<li>répétable : le test produit le même résultat à chaque appel</li>
+						<li>simple : le test met en œuvre le minimum de données</li>
+					</ul>
+				</section>-->
+				<section>
+					<p>On définit un test unitaire à partir de son point d'<mark>entrée</mark> et de son point de <mark>sortie</mark></p>
+				</section>
+				<section>
+					<p>Un point d'entrée est ce qui est invoqué/appelé en premier, l'endroit par lequel on entre dans le système</p>
+					<p>---</p>
+					<p>Un point de sortie est le résultat ou le comportement que l'on obtient</p>
+					<p>---</p>
+					<p>On définit ainsi une <mark>unité fonctionnelle</mark></p>
+				</section>
+				<section>
+					Il existe 3 catégories de points de sortie :
+					<ol>
+						<li>La valeur/exception retournée</li>
+						<li>L'état</li>
+						<li>Un collaborateur extérieur</li>
+					</ol>
+				</section>
+				<section>
+					<p><u>Type 1</u> - Récupération d'une valeur : les points d'entrée et de sortie sont confondus</p>
+					<img width="216" height="368" data-src="type1.png">
+				</section>
+				<section>
+					<p><u>Type 2</u> - Changement d'état du système donc le comportement du système change : il faut alors utiliser une différente fonction pour vérifier que le système se comporte différemment</p>
+					<img width="358" height="406" data-src="type2.png">
+				</section>
+				<section>
+					<p><u>Type 3</u> - Appeler un système tiers (logger, envoi d'email, etc...) : qch dont nous n'avons pas le contrôle et dont on pourra donner le change</p>
+					<img width="323" height="405" data-src="type3.png">
+				</section>
+				<section>
+					<p>Nous devrions écrire un test pour un seul point de sortie</p>
+					<p>---</p>
+					<p>Dit autrement : se limiter à une préoccupation par test car même si un point d'entrée agit sur *n* points de sortie, ces derniers peuvent échouer <u>différemment</u></p>
+				</section>
+				<section>
+					<h3>Nommage</h3>
+					<p>Le nom du test devrait exprimer l'exigence/<br>le comportement désiré du système</p>
+					<p>---</p>
+					<p>Le nom du test devrait comprendre les valeurs passées/l'état initial du système à tester et le résultat souhaité du système testé</p>
+				</section>
+				<section>
+					<h3>Nommage</h3>
+					<p>L'unité testée, les conditions de l'appel et l'attendu :</p>
+					<ul>
+						<li>estBissextile_annéeNonDivisiblePar4_retourneFaux</li>
+						<li>estBissextile_annéeDivisiblePar4MaisNonPar100_retourneVrai</li>
+						<li>estBissextile_annéeDivisiblePar100MaisNonPar400_retourneFaux</li>
+						<li>estBissextile_annéeDivisiblePar400_retourneVrai</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Quand s'arrêter ?</h3>
+					<ul>
+						<li>Code coverage</li>
+						<li>Écrire un test en premier pour chaque<br/>ajout ou modification d'un comportement</li>
+						<li>Mutation testing</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Quand s'arrêter ?</h3>
+					<img data-src="diagramme-venn.png">
+				</section>
+				<section>
+					<h3>Mais attention !</h3>
+					<p>À ne pas chercher à tester chaque ligne de code. Viser plutôt la <u>vérification</u> d'un <mark>comportement</mark> attendu.</p>
+					<p>---</p>
+					<p>La maintenance et l'évolutivité en dépendent.</p>
+				</section>
+				<section>
+					<h3>L'expérience dit...</h3>
+					<blockquote>&ldquo;Il n'y a pas d'astuces pour écrire des tests, il n'y a que des astuces pour écrire du code testable&ldquo;</blockquote>
+					<p>Mi&#154;ko Hevery, ex Google et créateur d'Angular</p>
+				</section>
+				<section>
+					<h3>Stratégie de tests</h3>
+					<img data-src="pyramide-tests.png">
+				</section>
+				<section>
+					<p>TU : logique et exhaustivité / TI : assemblage des composants / E2E : packaging, démarrage complet et rendu</p>
+					<hr>
+					<p>La pyramide des tests vs le cornet de glace : une <u>démarche</u> pratique favorisant les tests qui vérifient la logique / une unité de comportement (TU), puis le cablâge entre le système et un composant externe (TI), puis le rendu (E2E)</p>
+				</section>
+				<section>
+					<img width="477" height="650" data-src="cornet-glace.png">
+				</section>
+				<section>
+					<h3>JUnit</h3>
+					<ul>
+						<li>Notion de suites (v4)</li>
+						<li>Notion de tags (v5)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Autres outils</h3>
+					<ul>
+						<li>Jest, Javalanche</li>
+						<li>TestNG, QuickPerf</li>
+						<li>Jasmine</li>
+						<li>Outils intégrés</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Kata</h3>
+					<p>FizzBuzz</p>
+				</section>
+				<section>
+					<h3>Application</h3>
+					<p>Créer un composant logiciel capable d'enregistrer un flux. Le flux enregistré devra être nommé comme suit : 'nom-horodatage.extension'</p>
+					<p>Bonus : varier les modes d'enregistrement, rendre l'enregistrement dés/activable</p>
+				</section>
+				<section>
+					<h3>Conclusion</h3>
+					<p>Un logiciel doit :</p>
+					<ul>
+						<li>Fonctionner</li>
+						<li>Être compris</li>
+						<li>Pouvoir être mise à jour</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Conclusion</h3>
+					<ul>
+						<li>Pratiquer, pratiquer, pratiquer</li>
+						<li>La productivité n'augmentera pas immédiatement</li>
+						<li>Le nombre de bugs <em> de logique</em> diminuera drastiquement, de 40 à 90% selon Microsoft-IBM</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Ressources</h3>
+					<p>Lien : <a href="https://matsyl.github.io/sources-atelier-tu.html" target="_blank">https://matsyl.github.io/sources-atelier-tu.html</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight ]
+			});
+		</script>
+	</body>
+</html>
